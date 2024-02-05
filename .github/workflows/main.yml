@@ -30,3 +30,12 @@ jobs:
       run: |-
         python build_readme.py
         cat README.md
+    - name: Commit and push if changed
+      run: |-
+        git diff
+        git config --global user.email "Glaxyinfinite@outlook.com"
+        git config --global user.name "Ashinch"
+        git pull
+        git add -A
+        git commit -m "Updated content" || exit 0
+        git push
