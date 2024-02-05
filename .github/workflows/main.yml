@@ -33,6 +33,8 @@ jobs:
         python build_readme.py
         cat README.md
     - name: Commit and push if changed
+      env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |-
         git diff
         git config --global user.email "Glaxyinfinite@outlook.com"
