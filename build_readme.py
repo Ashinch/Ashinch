@@ -29,7 +29,7 @@ def fetch_blog_entries():
         {
             "title": entry["title"],
             "url": entry["link"].split("#")[0],
-            "published": format_time(entry["published"].split("T")[0]),
+            "published": format_time(entry["published"].split("T")[0] or entry["published"]),
         }
         for entry in entries
     ]
